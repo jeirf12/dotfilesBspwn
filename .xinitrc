@@ -39,12 +39,12 @@ twm &
 # DEFAULT_SESSION=twm
 
 case $1 in
-qtile)
-	exec qtile start
-	;;
 bspwm)
   sxhkd &
 	exec bspwm
+	;;
+qtile)
+	exec qtile start
 	;;
 esac
 
