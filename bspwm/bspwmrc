@@ -2,20 +2,16 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-if xrandr | grep "HDMI-1 disconnected"; then
-  xrandr --addmode HDMI-1 1366x768
-  xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --output HDMI-1 --mode 1366x768 --pos 0x768
-fi
-
 stateMon=$(xrandr -q | grep "connected" | awk '{print $2}' | grep -E "^connected" | wc -l)
 if [ "$stateMon" == "1" ]; then
   bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
 else
+  xrandr --addmode HDMI-1 1366x768
+  xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --output HDMI-1 --mode 1366x768 --pos 0x768
   bspc monitor eDP-1 -d I II III IV V
   bspc monitor HDMI-1 -d VI VII VIII IX X
-  # bspc monitor HDMI-1 -s eDP-1
+  bspc monitor HDMI-1 -s eDP-1
 fi
-
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -29,7 +25,7 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-~/.config/polybar/./launch.sh
+~/.config/polybar/./launch.sh &
 bspc config focus_follows_pointer true
 bspc config border_width 0
 picom --experimental-backends &

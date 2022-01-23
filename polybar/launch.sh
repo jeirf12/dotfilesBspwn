@@ -19,6 +19,7 @@ polybar top -c ~/.config/polybar/current.ini &
 polybar primary -c ~/.config/polybar/current.ini &
 
 ## Center bar
+polybar secondary -c ~/.config/polybar/workspace.ini &
 polybar primary -c ~/.config/polybar/workspace.ini &
 
 ## settings HDMI

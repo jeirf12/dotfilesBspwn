@@ -1,53 +1,49 @@
 configuration {
     font:                           "Iosevka Nerd Font 10";
     show-icons:                     false;
-	icon-theme: 					"Papirus";
-    display-drun: 					":";
+	  icon-theme: 					          "Papirus";
+    display-drun: 					        ":";
     drun-display-format:            "{name}";
     threads:                        0;
     scroll-method:                  0;
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    hide-scrollbar: 				        true;
+    sidebar-mode: 					        false;
     location:                       3;
 }
 
 @import "colors.rasi"
 
 window {
-    transparency:                   "real";
     background-color:               @background;
-    text-color:                     @foreground;
-    border-radius:                  20px;
-    height:                         27%;
+    border-radius:                  15px;
+    height:                         30%;
     width:                          12%;
     x-offset:                       -30;
     y-offset:                       70;
 }
 
 prompt {
-    enabled: 						true;
-	padding: 						4px 4px 6px 6px;
-	background-color: 				@background;
-	text-color: 					@foreground;
+    enabled: 						            true;
+    padding: 						            4px 4px 6px 6px;
+	  background-color: 				      @background;
 }
 
 textbox-prompt-colon {
-	expand: 						false;
-	str: 							"";
+	  expand: 						            false;
+	  str: 							              "";
     background-color:               @background;
     text-color:                     @logo;
     padding:                        5px 0px 0px 10px;
-	font:							"feather 10";
+    font:							              "feather 10";
 }
 
 inputbar {
-	children: 						[ textbox-prompt-colon, prompt ];
+	  children: 						          [ textbox-prompt-colon, prompt ];
     background-color:               @background;
-    text-color:                     @foreground;
     expand:                         false;
-    border:                  		0px 0px 1px 0px;
+    border:                  		    0px 0px 1px 0px;
     border-radius:                  20px;
     border-color:                  	@border;
     margin:                         0px 0px 0px 0px;
@@ -55,10 +51,7 @@ inputbar {
     position:                       center;
 }
 
-
 entry {
-    background-color:               @background;
-    text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0;
@@ -68,11 +61,8 @@ entry {
 }
 
 case-indicator {
-    background-color:               @background;
-    text-color:                     @foreground;
     spacing:                        0;
 }
-
 
 listview {
     background-color:               @background;
@@ -92,7 +82,6 @@ mainbox {
 
 element {
     background-color:               @background;
-    text-color:                     @foreground;
     orientation:                    horizontal;
     border-radius:                  4px;
     padding:                        6px 6px 6px 6px;
@@ -104,6 +93,7 @@ element-icon {
 }
 
 element-text {
+    background-color:               @background;
     expand:                         true;
     horizontal-align:               0;
     vertical-align:                 0;
@@ -113,30 +103,12 @@ element-text {
 element normal.urgent,
 element alternate.urgent {
     background-color:               @urgent;
-    text-color:                     @foreground;
     border-radius:                  9px;
 }
 
-element normal.active,
-element alternate.active {
-    background-color:               @background-alt;
-    text-color:                     @foreground;
-}
-
-element selected {
+element selected,
+element-text selected{
     background-color:               @selected;
-    text-color:                     @background;
-    border:                  		0px;
-    border-radius:                  20px;
-    border-color:                  	@border;
-}
-
-element selected.urgent {
-    background-color:               @urgent;
-    text-color:                     @foreground;
-}
-
-element selected.active {
-    background-color:               @background-alt;
-    color:                          @foreground;
+    border:                  		    0px;
+    border-radius:                  15px;
 }

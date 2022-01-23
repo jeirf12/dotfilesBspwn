@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 rofi_command="rofi -theme $HOME/.config/polybar/scripts/themes/powermenu.rasi"
 
 uptime=$(uptime -p | sed -e 's/up //g')
@@ -18,13 +17,13 @@ options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
 case $chosen in
     $shutdown)
-        systemctl poweroff
+        poweroff
         ;;
     $reboot)
-        systemctl reboot
+        reboot
         ;;
     $lock)
-        i3lock
+        slimlock
         ;;
     $suspend)
         mpc -q pause
@@ -32,7 +31,7 @@ case $chosen in
         systemctl suspend
         ;;
     $logout)
-        openbox --exit
+        bspc quit
         ;;
 esac
 

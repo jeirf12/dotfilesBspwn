@@ -1,15 +1,15 @@
 configuration {
     font:                           "Iosevka Nerd Font 10";
     show-icons:                     false;
-	icon-theme: 					"Papirus";
+	  icon-theme: 					"Papirus";
     display-drun: 					":";
     drun-display-format:            "{name}";
     threads:                        0;
     scroll-method:                  0;
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+	  hide-scrollbar: 				true;
+	  sidebar-mode: 					false;
     location:                       7;
 }
 
